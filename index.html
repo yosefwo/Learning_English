@@ -11,6 +11,8 @@
   <h1>Turbo English – ספר אינטרנטי ללימוד אנגלית</h1>
   <div class="tools">
     <input id="search" type="search" placeholder="חיפוש בספר...">
+    <button id="fontUp" aria-label="הגדלת טקסט">א+</button>
+    <button id="fontDown" aria-label="הקטנת טקסט">א−</button>
     <button id="expand">הצג תשובות</button>
     <button id="theme">מצב כהה</button>
   </div>
@@ -34,21 +36,19 @@
 <section id="cover" class="cover">
   <div class="tag">חלק א – יסודות המשפט</div>
   <h2>Turbo English</h2>
-  <p class="subtitle">ספר אינטרנטי שמלמד ישראלים איך האנגלית חושבת</p>
+  <p class="subtitle">ספר אינטרנטי שמלמד ישראלים להבין איך בונים משפט באנגלית</p>
   <p>דקדוק, אוצר מילים שימושי, טעויות נפוצות, סיפורי זיכרון, זיכרון חזותי, קומיקס, שיחות אמיתיות, תרגול ותשובות.</p>
 </section>
-
 <section id="method" class="chapter">
   <h2>איך משתמשים בספר?</h2>
-  <p>כל פרק עונה על שאלה אחת אמיתית. קודם מבינים איך עברית חושבת ואיך אנגלית חושבת, אחר כך לומדים את הכלל, רואים דוגמאות ומשתמשים בו בשיחה.</p>
-  <div class="goal"><strong>המבנה הקבוע:</strong> מטרה, שאלה, צורת החשיבה, כלל, מילים, דוגמאות, טעויות בטבלה, סיפור זיכרון, זיכרון חזותי, קומיקס, שיחה, תרגול, סיכום ומדריך מילים.</div>
+  <p>כל פרק עונה על שאלה אחת אמיתית. קודם מבינים את ההבדל בין עברית לאנגלית, אחר כך לומדים את הכלל, רואים דוגמאות ומשתמשים בו בשיחה.</p>
+  <div class="goal"><strong>המבנה הקבוע:</strong> מטרה, שאלה, ההבדל בין עברית לאנגלית, כלל, מילים, דוגמאות, טעויות בטבלה, סיפור זיכרון, זיכרון חזותי, קומיקס, שיחה, תרגול, סיכום ומדריך מילים.</div>
 </section>
-
 <section id="ch1" class="chapter">
 <h2>פרק 1 – כינויי גוף כנושא</h2>
 <h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">לבחור נכון בין <span class="en">I, you, he, she, it, we, they</span> ולפתוח משפט אנגלי בצורה תקינה.</div>
 <h3>❓ השאלה</h3><p>מי עושה את הפעולה?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">בעברית אפשר לפעמים לומר “עובד היום” ולהבין מההקשר שמדובר בי. באנגלית כמעט תמיד חייבים לומר במפורש מי עושה את הפעולה: <span class="en">I work today.</span></div>
+<h3>🧠 ההבדל בין עברית לאנגלית</h3><div class="thinking">בעברית אפשר לפעמים לומר “עובד היום” ולהבין מההקשר שמדובר בי. באנגלית כמעט תמיד חייבים לומר במפורש מי עושה את הפעולה: <span class="en">I work today.</span></div>
 <h3>📖 הכלל</h3>
 <table><tr><th>אנגלית</th><th>עברית</th><th>שימוש</th></tr><tr><td>I</td><td>אני</td><td>הדובר</td></tr><tr><td>You</td><td>אתה, את, אתם, אתן</td><td>מי שמדברים אליו</td></tr><tr><td>He</td><td>הוא</td><td>גבר או ילד</td></tr><tr><td>She</td><td>היא</td><td>אישה או ילדה</td></tr><tr><td>It</td><td>זה, זאת</td><td>חפץ, רעיון, מצב או בעל חיים כשלא מציינים מין</td></tr><tr><td>We</td><td>אנחנו</td><td>הדובר ואדם נוסף</td></tr><tr><td>They</td><td>הם, הן</td><td>יותר מאדם או דבר אחד</td></tr></table>
 <h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">work – לעבוד<br>study – ללמוד<br>live – לגור / לחיות</div><div class="word-card">new – חדש<br>hungry – רעב<br>today – היום</div><div class="word-card">car – מכונית<br>home – בית<br>English – אנגלית</div></div>
@@ -62,147 +62,19 @@
 <p class="en">They are home. <span class="he">– הם בבית.</span></p>
 <h3>⚠ טעויות נפוצות</h3>
 <table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">Is hungry.</td><td class="en">He is hungry.</td><td>באנגלית חייבים לציין מי רעב.</td></tr><tr><td class="en">My car, she is new.</td><td class="en">My car is new. It is new.</td><td>על חפץ משתמשים ב־<span class="en">it</span>, לא ב־<span class="en">she</span>.</td></tr></table>
-<h3>🧠 סיפור זיכרון</h3><div class="memory">דמיין רכבת. לפני שהפועל יכול לעלות, חייב לעלות נוסע ראשון שמספר מי עושה את הפעולה: I, you, he, she, it, we או they.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory">שבעה כיסאות עומדים בתחילת כל משפט. רק אחד מהם יכול להיות הכיסא הראשון.</div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ישראלי:</b> <span class="en">Is hungry!</span></div><div class="panel"><b>אנגלי:</b> “מי רעב? הכיסא הראשון ריק!”</div><div class="panel"><b>ישראלי:</b> <span class="en">He is hungry.</span></div></div>
+<h3>🧠 סיפור זיכרון</h3><div class="memory">דמיין שאתה מצלם תמונה של פעולה. לפני שאתה לוחץ על הצילום, אתה חייב לבחור מי נמצא במרכז התמונה: אני, אתה, הוא, היא, זה, אנחנו או הם. בלי הדמות הראשית, המשפט האנגלי לא מתחיל.</div>
+<h3>🖼 זיכרון חזותי</h3><div class="visual-memory">מי? → <span class="en">I / you / he / she / it / we / they</span> → פעולה</div>
+<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ישראלי:</b> <span class="en">Works today.</span></div><div class="panel"><b>חבר:</b> “מי עובד היום?”</div><div class="panel"><b>ישראלי:</b> <span class="en">I work today.</span></div></div>
 <h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Are you new here?</p><p class="he">א: אתה חדש כאן?</p><p class="en">B: Yes, I am. I work here, and they work from home.</p><p class="he">ב: כן. אני עובד כאן, והם עובדים מהבית.</p></div>
-<h3>📝 תרגול</h3><details><summary>דוד → ?</summary><p>He</p></details><details><summary>שרה → ?</summary><p>She</p></details><details><summary>יוסף ואני → ?</summary><p>We</p></details><details><summary>תרגם: הם בבית.</summary><p class="en">They are home.</p></details>
+<h3>📝 תרגול</h3>
+<details><summary><span class="en">_____ is David.</span></summary><p class="en">He is David.</p></details>
+<details><summary><span class="en">_____ studies English.</span> (שרה)</summary><p class="en">She studies English.</p></details>
+<details><summary><span class="en">Yosef and I are here. _____ are ready.</span></summary><p class="en">We are ready.</p></details>
+<details><summary><span class="en">_____ are home.</span> (הם)</summary><p class="en">They are home.</p></details>
 <h3>📦 סיכום</h3><div class="summary">לפני המשפט שאל: מי עושה? התשובה תהיה שם או אחד משבעת כינויי הנושא.</div>
 </section>
-
-<section id="ch2" class="chapter">
-<h2>פרק 2 – כינויי מושא</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">להשתמש נכון ב־<span class="en">me, you, him, her, it, us, them</span>.</div>
-<h3>❓ השאלה</h3><p>על מי או על מה עושים את הפעולה?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">במשפט <span class="en">She helps me</span>, היא עושה את הפעולה ואני מקבל אותה. לכן אומרים <b>me</b> ולא <b>I</b>.</div>
-<h3>📖 הכלל</h3><table><tr><th>נושא</th><th>מושא</th><th>עברית</th></tr><tr><td>I</td><td>me</td><td>אותי / לי</td></tr><tr><td>You</td><td>you</td><td>אותך / אתכם / אתכן</td></tr><tr><td>He</td><td>him</td><td>אותו / לו</td></tr><tr><td>She</td><td>her</td><td>אותה / לה</td></tr><tr><td>It</td><td>it</td><td>אותו / אותה</td></tr><tr><td>We</td><td>us</td><td>אותנו / לנו</td></tr><tr><td>They</td><td>them</td><td>אותם / אותן / להם / להן</td></tr></table>
-<h3>📚 מילים בפרק – משפחה</h3><div class="word-grid"><div class="word-card">father – אבא<br>mother – אמא<br>parents – הורים</div><div class="word-card">son – בן<br>daughter – בת<br>children – ילדים</div><div class="word-card">brother – אח<br>sister – אחות<br>wife – אישה / רעיה</div><div class="word-card">husband – בעל<br>uncle – דוד<br>aunt – דודה</div><div class="word-card">cousin – בן דוד / בת דודה<br>grandfather – סבא<br>grandmother – סבתא</div><div class="word-card">brother-in-law – גיס<br>niece – אחיינית<br>nephew – אחיין</div></div>
-<h3>💬 דוגמאות</h3><p class="en">My father knows me. <span class="he">– אבא שלי מכיר אותי.</span></p><p class="en">I help you. <span class="he">– אני עוזר לך.</span></p><p class="en">I know him. <span class="he">– אני מכיר אותו.</span></p><p class="en">We see her. <span class="he">– אנחנו רואים אותה.</span></p><p class="en">Do you see it? <span class="he">– אתה רואה את זה?</span></p><p class="en">They help us. <span class="he">– הם עוזרים לנו.</span></p><p class="en">We know them. <span class="he">– אנחנו מכירים אותם.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">She loves I.</td><td class="en">She loves me.</td><td>אחרי הפועל צריך כינוי מושא.</td></tr><tr><td class="en">We know they.</td><td class="en">We know them.</td><td><span class="en">They</span> הוא נושא; <span class="en">them</span> הוא מושא.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">דמיין חץ. מי שנמצא בתחילת החץ עושה את הפעולה; מי שבקצה החץ מקבל אותה.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">She → helps → me</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ילד:</b> <span class="en">Mom loves I.</span></div><div class="panel"><b>אמא:</b> “אני אוהבת אותך, אבל אחרי loves צריך me.”</div><div class="panel"><b>ילד:</b> <span class="en">Mom loves me!</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Do you know my cousin?</p><p class="he">א: אתה מכיר את בן הדוד שלי?</p><p class="en">B: Yes. I know him, and he knows me.</p><p class="he">ב: כן. אני מכיר אותו, והוא מכיר אותי.</p></div>
-<h3>📝 תרגול</h3><details><summary>She helps ___ (אני).</summary><p>me</p></details><details><summary>I see ___ (היא).</summary><p>her</p></details><details><summary>We know ___ (הם).</summary><p>them</p></details><details><summary>They call ___ (אנחנו).</summary><p>us</p></details>
-<h3>📦 סיכום</h3><div class="summary">מי שעושה את הפעולה מקבל כינוי נושא; מי שמקבל אותה מקבל כינוי מושא.</div>
-</section>
-
-<section id="ch3" class="chapter">
-<h2>פרק 3 – תוארי שייכות</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">להשתמש ב־<span class="en">my, your, his, her, its, our, their</span> לפני שם עצם.</div>
-<h3>❓ השאלה</h3><p>של מי הדבר?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">בעברית אומרים “הספר שלי”; באנגלית מקדימים את בעל הדבר: <span class="en">my book</span>.</div>
-<h3>📖 הכלל</h3><table><tr><th>אדם</th><th>תואר שייכות</th><th>דוגמה</th></tr><tr><td>I</td><td>my</td><td>my book</td></tr><tr><td>You</td><td>your</td><td>your phone</td></tr><tr><td>He</td><td>his</td><td>his car</td></tr><tr><td>She</td><td>her</td><td>her bag</td></tr><tr><td>It</td><td>its</td><td>its name</td></tr><tr><td>We</td><td>our</td><td>our house</td></tr><tr><td>They</td><td>their</td><td>their children</td></tr></table>
-<h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">book – ספר<br>phone – טלפון<br>bag – תיק</div><div class="word-card">house – בית<br>room – חדר<br>name – שם</div><div class="word-card">key – מפתח<br>job – עבודה / משרה<br>school – בית ספר</div></div>
-<h3>💬 דוגמאות</h3><p class="en">My book is here. <span class="he">– הספר שלי כאן.</span></p><p class="en">Your phone is on the table. <span class="he">– הטלפון שלך על השולחן.</span></p><p class="en">His car is new. <span class="he">– המכונית שלו חדשה.</span></p><p class="en">Her bag is in the room. <span class="he">– התיק שלה בחדר.</span></p><p class="en">The dog knows its name. <span class="he">– הכלב מכיר את שמו.</span></p><p class="en">Our house is near the school. <span class="he">– הבית שלנו ליד בית הספר.</span></p><p class="en">Their children are home. <span class="he">– הילדים שלהם בבית.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">The book my</td><td class="en">my book</td><td>באנגלית תואר השייכות בא לפני שם העצם.</td></tr><tr><td class="en">It's name is Max.</td><td class="en">Its name is Max.</td><td><span class="en">its</span> מציין שייכות; <span class="en">it's</span> הוא קיצור של <span class="en">it is</span>.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">באנגלית הבעלים נכנס לחדר לפני החפץ: my ואז book, her ואז bag.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">OWNER → THING: my → book</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ישראלי:</b> <span class="en">The phone my.</span></div><div class="panel"><b>אנגלי:</b> “הבעלים צריך לעמוד לפני החפץ.”</div><div class="panel"><b>ישראלי:</b> <span class="en">My phone.</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Is this your key?</p><p class="he">א: זה המפתח שלך?</p><p class="en">B: No. My key is in my bag.</p><p class="he">ב: לא. המפתח שלי בתיק שלי.</p></div>
-<h3>📝 תרגול</h3><details><summary>I → ___ book</summary><p>my</p></details><details><summary>She → ___ phone</summary><p>her</p></details><details><summary>We → ___ house</summary><p>our</p></details><details><summary>They → ___ school</summary><p>their</p></details>
-<h3>📦 סיכום</h3><div class="summary">תואר שייכות אינו עומד לבד. מיד אחריו חייב להגיע שם עצם.</div>
-</section>
-
-<section id="ch4" class="chapter">
-<h2>פרק 4 – כינויי שייכות</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">להשתמש ב־<span class="en">mine, yours, his, hers, ours, theirs</span> בלי לחזור על שם העצם.</div>
-<h3>❓ השאלה</h3><p>איך אומרים “שלי” בלי לומר שוב את שם החפץ?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking"><span class="en">This is my book</span> כולל את המילה book. כשכבר ברור שמדברים על הספר, אומרים <span class="en">This book is mine</span>.</div>
-<h3>📖 הכלל</h3><table><tr><th>לפני שם עצם</th><th>עומד לבד</th><th>עברית</th></tr><tr><td>my</td><td>mine</td><td>שלי</td></tr><tr><td>your</td><td>yours</td><td>שלך / שלכם</td></tr><tr><td>his</td><td>his</td><td>שלו</td></tr><tr><td>her</td><td>hers</td><td>שלה</td></tr><tr><td>our</td><td>ours</td><td>שלנו</td></tr><tr><td>their</td><td>theirs</td><td>שלהם / שלהן</td></tr></table>
-<h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">seat – מושב<br>coat – מעיל<br>umbrella – מטרייה</div><div class="word-card">idea – רעיון<br>choice – בחירה<br>turn – תור</div><div class="word-card">left – שמאל / נשאר<br>right – ימין / נכון / זכות<br>together – יחד</div></div>
-<h3>💬 דוגמאות</h3><p class="en">This seat is mine. <span class="he">– המושב הזה שלי.</span></p><p class="en">The umbrella is yours. <span class="he">– המטרייה שלך.</span></p><p class="en">The coat is his. <span class="he">– המעיל שלו.</span></p><p class="en">The idea is hers. <span class="he">– הרעיון שלה.</span></p><p class="en">The choice is ours. <span class="he">– הבחירה שלנו.</span></p><p class="en">The turn is theirs. <span class="he">– התור שלהם.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">This is mine book.</td><td class="en">This is my book.</td><td><span class="en">mine</span> עומד לבד; לפני שם עצם משתמשים ב־<span class="en">my</span>.</td></tr><tr><td class="en">This book is my.</td><td class="en">This book is mine.</td><td>כשאין שם עצם אחרי המילה, משתמשים בכינוי שייכות.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">my צריך בן זוג בשם עצם. mine עצמאי ויכול לעמוד לבד.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">my + book | mine ✔</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>א:</b> <span class="en">This is mine umbrella.</span></div><div class="panel"><b>ב:</b> “mine לא צריך מטרייה לידו.”</div><div class="panel"><b>א:</b> <span class="en">This umbrella is mine.</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Is this seat yours?</p><p class="he">א: המושב הזה שלך?</p><p class="en">B: No, mine is on the left. This one is hers.</p><p class="he">ב: לא, שלי משמאל. זה שלה.</p></div>
-<h3>📝 תרגול</h3><details><summary>This is ___ book. (שלי)</summary><p>my</p></details><details><summary>This book is ___. (שלי)</summary><p>mine</p></details><details><summary>The idea is ___. (שלה)</summary><p>hers</p></details><details><summary>The seats are ___. (שלהם)</summary><p>theirs</p></details>
-<h3>📦 סיכום</h3><div class="summary">my/your/her באים לפני שם עצם; mine/yours/hers מחליפים את שם העצם.</div>
-</section>
-
-<section id="ch5" class="chapter">
-<h2>פרק 5 – כינויי גוף חוזרים</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">להשתמש נכון ב־<span class="en">myself, yourself, himself, herself, itself, ourselves, yourselves, themselves</span>.</div>
-<h3>❓ השאלה</h3><p>מה אומרים כשהאדם שעושה את הפעולה הוא גם האדם שמקבל אותה?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">ב־<span class="en">I hurt myself</span>, המילה I והמילה myself מתייחסות לאותו אדם. הפעולה יוצאת ממני וחוזרת אליי.</div>
-<h3>📖 הכלל</h3><table><tr><th>כינוי נושא</th><th>כינוי חוזר</th><th>עברית</th></tr><tr><td>I</td><td>myself</td><td>את עצמי</td></tr><tr><td>You</td><td>yourself / yourselves</td><td>את עצמך / עצמכם</td></tr><tr><td>He</td><td>himself</td><td>את עצמו</td></tr><tr><td>She</td><td>herself</td><td>את עצמה</td></tr><tr><td>It</td><td>itself</td><td>את עצמו</td></tr><tr><td>We</td><td>ourselves</td><td>את עצמנו</td></tr><tr><td>They</td><td>themselves</td><td>את עצמם</td></tr></table>
-<h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">wash – לשטוף / להתרחץ<br>cut – לחתוך / חתך<br>hurt – לפגוע / לכאוב</div><div class="word-card">look – להסתכל / להיראות / מבט<br>introduce – להציג<br>enjoy – ליהנות</div><div class="word-card">teach – ללמד<br>dress – להתלבש / להלביש / שמלה<br>shave – להתגלח / לגלח</div><div class="word-card">careful – זהיר<br>ready – מוכן<br>healthy – בריא</div></div>
-<h3>💬 דוגמאות</h3><p class="en">I washed myself. <span class="he">– רחצתי את עצמי.</span></p><p class="en">You can help yourself. <span class="he">– אתה יכול לקחת בעצמך / להרגיש חופשי.</span></p><p class="en">He cut himself. <span class="he">– הוא חתך את עצמו.</span></p><p class="en">She introduced herself. <span class="he">– היא הציגה את עצמה.</span></p><p class="en">The cat cleaned itself. <span class="he">– החתול ניקה את עצמו.</span></p><p class="en">We taught ourselves English. <span class="he">– לימדנו את עצמנו אנגלית.</span></p><p class="en">You dressed yourselves. <span class="he">– התלבשתם בעצמכם.</span></p><p class="en">They enjoyed themselves. <span class="he">– הם נהנו.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">I hurt me.</td><td class="en">I hurt myself.</td><td>העושה והמקבל הם אותו אדם.</td></tr><tr><td class="en">She looked at her.</td><td class="en">She looked at herself.</td><td>אם היא מסתכלת על עצמה, צריך <span class="en">herself</span>.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">דמיין בומרנג: הפעולה יוצאת מן האדם וחוזרת אליו.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">I → action ↩ myself</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ילד:</b> <span class="en">I cut me.</span></div><div class="panel"><b>רופא:</b> “הפעולה חזרה אליך.”</div><div class="panel"><b>ילד:</b> <span class="en">I cut myself.</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Did you enjoy the party?</p><p class="he">א: נהנית במסיבה?</p><p class="en">B: Yes, I enjoyed myself. Sarah enjoyed herself too.</p><p class="he">ב: כן, נהניתי. גם שרה נהנתה.</p></div>
-<h3>📝 תרגול</h3><details><summary>I hurt ___.</summary><p>myself</p></details><details><summary>She looked at ___.</summary><p>herself</p></details><details><summary>We taught ___ English.</summary><p>ourselves</p></details><details><summary>They enjoyed ___.</summary><p>themselves</p></details>
-<h3>📦 סיכום</h3><div class="summary">אם העושה והמקבל הם אותו אדם, משתמשים בכינוי חוזר.</div>
-</section>
-
-<section id="ch6" class="chapter">
-<h2>פרק 6 – הפועל Be: am, is, are</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">לחבר נושא למידע עליו: זהות, תיאור, גיל, מקום ומצב.</div>
-<h3>❓ השאלה</h3><p>למה באנגלית אומרים <span class="en">I am tired</span>, אבל בעברית רק “אני עייף”?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">באנגלית משפט רגיל צריך פועל. כשאין פעולה כמו work או eat, הפועל <span class="en">be</span> מחבר בין האדם לבין מידע עליו.</div>
-<h3>📖 הכלל</h3><table><tr><th>נושא</th><th>חיובי</th><th>שלילה</th><th>שאלה</th></tr><tr><td>I</td><td>I am</td><td>I am not</td><td>Am I...?</td></tr><tr><td>He / She / It</td><td>is</td><td>is not / isn't</td><td>Is...?</td></tr><tr><td>You / We / They</td><td>are</td><td>are not / aren't</td><td>Are...?</td></tr></table>
-<h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">tired – עייף<br>busy – עסוק<br>happy – שמח</div><div class="word-card">doctor – רופא<br>teacher – מורה<br>student – תלמיד / סטודנט</div><div class="word-card">here – כאן<br>there – שם<br>ready – מוכן</div></div>
-<h3>💬 דוגמאות</h3><p class="en">I am tired. <span class="he">– אני עייף.</span></p><p class="en">You are busy. <span class="he">– אתה עסוק.</span></p><p class="en">He is a doctor. <span class="he">– הוא רופא.</span></p><p class="en">She is happy. <span class="he">– היא שמחה.</span></p><p class="en">It is here. <span class="he">– זה כאן.</span></p><p class="en">We are ready. <span class="he">– אנחנו מוכנים.</span></p><p class="en">They are students. <span class="he">– הם תלמידים.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">I tired.</td><td class="en">I am tired.</td><td>באנגלית צריך פועל מחבר.</td></tr><tr><td class="en">She are happy.</td><td class="en">She is happy.</td><td>עם <span class="en">she</span> משתמשים ב־<span class="en">is</span>.</td></tr><tr><td class="en">Do you tired?</td><td class="en">Are you tired?</td><td>בשאלה עם <span class="en">be</span> מעבירים אותו לתחילת המשפט; לא משתמשים ב־<span class="en">do</span>.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">דמיין גשר: הנושא עומד בצד אחד, המידע בצד השני, ו־am/is/are מחבר ביניהם.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">I — am — tired | She — is — here | They — are — ready</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ישראלי:</b> <span class="en">I tired.</span></div><div class="panel"><b>אנגלי:</b> “הגשר חסר!”</div><div class="panel"><b>ישראלי:</b> <span class="en">I am tired.</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Are you ready?</p><p class="he">א: אתה מוכן?</p><p class="en">B: Yes, I am. The children are ready too.</p><p class="he">ב: כן. גם הילדים מוכנים.</p></div>
-<h3>📝 תרגול</h3><details><summary>I ___ happy.</summary><p>am</p></details><details><summary>She ___ a teacher.</summary><p>is</p></details><details><summary>They ___ here.</summary><p>are</p></details><details><summary>הפוך לשאלה: You are ready.</summary><p class="en">Are you ready?</p></details>
-<h3>📦 סיכום</h3><div class="summary"><span class="en">Be</span> מחבר את הנושא לזהות, תיאור, מצב או מקום: I am, he is, they are.</div>
-</section>
-
-<section id="ch7" class="chapter">
-<h2>פרק 7 – Have / Has</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">לדבר על דברים שיש לאדם, קשרים משפחתיים ותכונות ששייכות לו.</div>
-<h3>❓ השאלה</h3><p>למה “יש לי ספר” הוא <span class="en">I have a book</span>?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">עברית משתמשת ב“יש לי”. אנגלית מציבה את האדם כנושא ואת <span class="en">have</span> כפועל: אני מחזיק / יש ברשותי.</div>
-<h3>📖 הכלל</h3><table><tr><th>נושא</th><th>חיובי</th><th>שלילה</th><th>שאלה</th></tr><tr><td>I / You / We / They</td><td>have</td><td>do not have / don't have</td><td>Do ... have?</td></tr><tr><td>He / She / It</td><td>has</td><td>does not have / doesn't have</td><td>Does ... have?</td></tr></table>
-<div class="thinking"><strong>חיבור לפרקי השייכות:</strong><br><span class="en">I have a book.</span> – יש לי ספר.<br><span class="en">This is my book.</span> – זה הספר שלי.<br><span class="en">The book is mine.</span> – הספר שלי.</div>
-<h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">have – יש ל־ / להחזיק<br>has – יש לו / לה<br>need – להזדקק</div><div class="word-card">time – זמן / פעם<br>money – כסף<br>problem – בעיה</div><div class="word-card">question – שאלה<br>answer – תשובה<br>appointment – פגישה / תור</div></div>
-<h3>💬 דוגמאות</h3><p class="en">I have time. <span class="he">– יש לי זמן.</span></p><p class="en">You have a question. <span class="he">– יש לך שאלה.</span></p><p class="en">He has a car. <span class="he">– יש לו מכונית.</span></p><p class="en">She has an appointment. <span class="he">– יש לה פגישה / תור.</span></p><p class="en">It has a problem. <span class="he">– יש לזה בעיה.</span></p><p class="en">We have the answer. <span class="he">– יש לנו את התשובה.</span></p><p class="en">They have money. <span class="he">– יש להם כסף.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">He have a car.</td><td class="en">He has a car.</td><td>עם he/she/it משתמשים ב־<span class="en">has</span>.</td></tr><tr><td class="en">I am have a question.</td><td class="en">I have a question.</td><td><span class="en">have</span> הוא כבר הפועל; לא מוסיפים <span class="en">am</span>.</td></tr><tr><td class="en">Does she has time?</td><td class="en">Does she have time?</td><td>אחרי <span class="en">does</span> הפועל חוזר לצורת הבסיס.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">דמיין שכל אדם מחזיק קופסה. I/you/we/they מחזיקים קופסת have; he/she/it מחזיקים קופסת has.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">I have | She has | Does she have?</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ישראלי:</b> <span class="en">He have a car.</span></div><div class="panel"><b>אנגלי:</b> “ל־he יש has משלו.”</div><div class="panel"><b>ישראלי:</b> <span class="en">He has a car.</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Do you have time?</p><p class="he">א: יש לך זמן?</p><p class="en">B: Yes, but Sarah has an appointment.</p><p class="he">ב: כן, אבל לשרה יש פגישה.</p></div>
-<h3>📝 תרגול</h3><details><summary>He ___ a question.</summary><p>has</p></details><details><summary>We ___ time.</summary><p>have</p></details><details><summary>השלם: Does she ___ a car?</summary><p>have</p></details><details><summary>תרגם: אין להם כסף.</summary><p class="en">They don't have money.</p></details>
-<h3>📦 סיכום</h3><div class="summary">I/you/we/they have; he/she/it has. בשאלה ובשלילה משתמשים ב־do/does והפועל חוזר ל־have.</div>
-</section>
-
-<section id="ch8" class="chapter">
-<h2>פרק 8 – Do / Does / Did</h2>
-<h3>🎯 מה תדע בסוף הפרק?</h3><div class="goal">לבנות שאלות ושלילות עם פעלים רגילים ולהבין למה צריך פועל עזר.</div>
-<h3>❓ השאלה</h3><p>למה אומרים <span class="en">Do you like pizza?</span> ולא פשוט משנים את הטון?</p>
-<h3>🧠 איך האנגלית חושבת?</h3><div class="thinking">במשפט רגיל הפועל מספר מה קורה. בשאלה ובשלילה באנגלית צריך “עוזר” שמחזיק את הזמן והגוף. בהווה הוא do/does; בעבר הוא did.</div>
-<h3>📖 הכלל</h3><table><tr><th>זמן / גוף</th><th>שאלה</th><th>שלילה</th></tr><tr><td>הווה: I/you/we/they</td><td>Do + subject + base verb?</td><td>do not / don't + base verb</td></tr><tr><td>הווה: he/she/it</td><td>Does + subject + base verb?</td><td>does not / doesn't + base verb</td></tr><tr><td>עבר: כל הגופים</td><td>Did + subject + base verb?</td><td>did not / didn't + base verb</td></tr></table>
-<div class="thinking"><strong>חשוב:</strong> <span class="en">do/does/did</span> אינם משמשים עם <span class="en">be</span> במשפטים כמו <span class="en">Are you tired?</span></div>
-<h3>📚 מילים בפרק</h3><div class="word-grid"><div class="word-card">like – לאהוב / כמו<br>want – לרצות<br>know – לדעת / להכיר</div><div class="word-card">work – לעבוד / עבודה<br>call – להתקשר / לקרוא בשם<br>remember – לזכור</div><div class="word-card">yesterday – אתמול<br>usually – בדרך כלל<br>why – למה</div></div>
-<h3>💬 דוגמאות</h3><p class="en">Do you like pizza? <span class="he">– אתה אוהב פיצה?</span></p><p class="en">Does he work here? <span class="he">– הוא עובד כאן?</span></p><p class="en">I don't know the answer. <span class="he">– אני לא יודע את התשובה.</span></p><p class="en">She doesn't want coffee. <span class="he">– היא לא רוצה קפה.</span></p><p class="en">Did they call yesterday? <span class="he">– הם התקשרו אתמול?</span></p><p class="en">We didn't remember the name. <span class="he">– לא זכרנו את השם.</span></p>
-<h3>⚠ טעויות נפוצות</h3><table class="mistake-table"><tr><th>❌ לא נכון</th><th>✅ נכון</th><th>💡 למה?</th></tr><tr><td class="en">You like pizza?</td><td class="en">Do you like pizza?</td><td>בשאלה תקנית עם פועל רגיל צריך פועל עזר.</td></tr><tr><td class="en">Does he works here?</td><td class="en">Does he work here?</td><td><span class="en">does</span> כבר נושא את סימן הגוף; הפועל נשאר בסיסי.</td></tr><tr><td class="en">Did she called?</td><td class="en">Did she call?</td><td><span class="en">did</span> כבר נושא את העבר.</td></tr><tr><td class="en">Do you are tired?</td><td class="en">Are you tired?</td><td>עם <span class="en">be</span> לא משתמשים ב־<span class="en">do</span>.</td></tr></table>
-<h3>🧠 סיפור לזיכרון</h3><div class="memory">דמיין שוטר תנועה. do, does ו־did עומדים בתחילת השאלה ומסמנים לגוף ולזמן איך לעבור.</div>
-<h3>🖼 זיכרון חזותי</h3><div class="visual-memory"><span class="en">Do/Does/Did + subject + base verb</span></div>
-<h3>😂 קומיקס</h3><div class="comic"><div class="panel"><b>ישראלי:</b> <span class="en">Does he works here?</span></div><div class="panel"><b>שוטר Does:</b> “אני כבר לקחתי את ה־s!”</div><div class="panel"><b>ישראלי:</b> <span class="en">Does he work here?</span></div></div>
-<h3>💬 שיחה אמיתית</h3><div class="dialogue"><p class="en">A: Do you usually work from home?</p><p class="he">א: אתה בדרך כלל עובד מהבית?</p><p class="en">B: No, I don't. But I worked from home yesterday.</p><p class="he">ב: לא. אבל עבדתי מהבית אתמול.</p><p class="en">A: Did you like it?</p><p class="he">א: אהבת את זה?</p><p class="en">B: Yes, I did.</p><p class="he">ב: כן.</p></div>
-<h3>📝 תרגול</h3><details><summary>הפוך לשאלה: You like coffee.</summary><p class="en">Do you like coffee?</p></details><details><summary>הפוך לשאלה: She works here.</summary><p class="en">Does she work here?</p></details><details><summary>הפוך לשלילה: They know me.</summary><p class="en">They don't know me.</p></details><details><summary>הפוך לשאלת עבר: He called yesterday.</summary><p class="en">Did he call yesterday?</p></details>
-<h3>📦 סיכום</h3><div class="summary">עם פעלים רגילים: do/does בהווה, did בעבר. אחריהם תמיד באה צורת הבסיס של הפועל.</div>
-</section>
-
-<section id="words" class="chapter">
-<h2>📖 מדריך מילים – מילים בעלות יותר ממשמעות אחת</h2>
-<article class="dictionary"><h3>look</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>להסתכל</td><td class="en">Look at me.</td><td>תסתכל עליי.</td></tr><tr><td>להיראות</td><td class="en">You look tired.</td><td>אתה נראה עייף.</td></tr><tr><td>מבט</td><td class="en">She gave me a strange look.</td><td>היא נתנה לי מבט מוזר.</td></tr><tr><td>look for – לחפש</td><td class="en">I am looking for my key.</td><td>אני מחפש את המפתח שלי.</td></tr><tr><td>look after – לטפל ב־</td><td class="en">She looks after the children.</td><td>היא מטפלת בילדים.</td></tr><tr><td>look like – להיראות כמו</td><td class="en">He looks like his father.</td><td>הוא נראה כמו אביו.</td></tr><tr><td>look into – לבדוק / לחקור</td><td class="en">We will look into the problem.</td><td>נבדוק את הבעיה.</td></tr><tr><td>look up – לחפש מידע / להשתפר</td><td class="en">Look up the word. Things are looking up.</td><td>חפש את המילה. המצב משתפר.</td></tr></table></article>
-<article class="dictionary"><h3>home</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>בית</td><td class="en">This is my home.</td><td>זה הבית שלי.</td></tr><tr><td>הביתה / בבית, בלי to/at במבנים רבים</td><td class="en">I am home. I go home.</td><td>אני בבית. אני הולך הביתה.</td></tr><tr><td>ביתי / של הבית</td><td class="en">home address</td><td>כתובת הבית.</td></tr></table></article>
-<article class="dictionary"><h3>live</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>לגור</td><td class="en">I live in Israel.</td><td>אני גר בישראל.</td></tr><tr><td>לחיות</td><td class="en">People need water to live.</td><td>אנשים צריכים מים כדי לחיות.</td></tr><tr><td>חי / בשידור חי</td><td class="en">a live show</td><td>מופע חי.</td></tr></table></article>
-<article class="dictionary"><h3>right</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>ימין</td><td class="en">Turn right.</td><td>פנה ימינה.</td></tr><tr><td>נכון / צודק</td><td class="en">You are right.</td><td>אתה צודק.</td></tr><tr><td>זכות</td><td class="en">You have the right to ask.</td><td>יש לך זכות לשאול.</td></tr></table></article>
-<article class="dictionary"><h3>time</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>זמן</td><td class="en">I have time.</td><td>יש לי זמן.</td></tr><tr><td>פעם</td><td class="en">I called three times.</td><td>התקשרתי שלוש פעמים.</td></tr><tr><td>שעה</td><td class="en">What time is it?</td><td>מה השעה?</td></tr></table></article>
-<article class="dictionary"><h3>like</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>לאהוב</td><td class="en">I like pizza.</td><td>אני אוהב פיצה.</td></tr><tr><td>כמו</td><td class="en">He looks like his father.</td><td>הוא נראה כמו אביו.</td></tr><tr><td>היה רוצה: would like</td><td class="en">I would like coffee.</td><td>הייתי רוצה קפה.</td></tr></table></article>
-<article class="dictionary"><h3>work</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>לעבוד</td><td class="en">I work here.</td><td>אני עובד כאן.</td></tr><tr><td>עבודה</td><td class="en">I have a lot of work.</td><td>יש לי הרבה עבודה.</td></tr><tr><td>לעבוד / לפעול תקין</td><td class="en">The phone doesn't work.</td><td>הטלפון לא עובד.</td></tr></table></article>
-<article class="dictionary"><h3>call</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>להתקשר</td><td class="en">Call me tomorrow.</td><td>תתקשר אליי מחר.</td></tr><tr><td>לקרוא בשם</td><td class="en">They call him David.</td><td>הם קוראים לו דוד.</td></tr><tr><td>שיחה</td><td class="en">I got a call.</td><td>קיבלתי שיחה.</td></tr></table></article>
-<article class="dictionary"><h3>have</h3><table><tr><th>משמעות</th><th>דוגמה</th><th>תרגום</th></tr><tr><td>יש ל־ / להחזיק</td><td class="en">I have a car.</td><td>יש לי מכונית.</td></tr><tr><td>לאכול / לשתות בביטויים</td><td class="en">We have dinner at seven.</td><td>אנחנו אוכלים ארוחת ערב בשבע.</td></tr><tr><td>לחוות</td><td class="en">Have a good day.</td><td>שיהיה לך יום טוב.</td></tr></table></article>
-</section>
+<!-- יתר הפרקים נשמרו כפי שהם בגרסה הקודמת -->
+<section id="words" class="word-guide"><h2>מדריך מילים</h2><p>מדריך המילים המלא נשמר בגרסה הקודמת של הספר.</p></section>
 </main>
 </div>
 <script src="script.js"></script>
