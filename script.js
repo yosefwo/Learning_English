@@ -51,3 +51,84 @@ extraStyle.textContent=`details{transition:background .2s ease,border-color .2s 
 document.head.appendChild(extraStyle);
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<850&&sidebar)sidebar.scrollIntoView({behavior:'smooth'});}));
+
+// Add accessible text-to-speech to every English phrase or sentence.
+const speechEngine=window.speechSynthesis;
+let englishVoices=[];
+let activeSpeechButton=null;
+
+function refreshEnglishVoices(){
+  if(!speechEngine)return;
+  englishVoices=speechEngine.getVoices().filter(voice=>/^en([_-]|$)/i.test(voice.lang));
+}
+
+function preferredEnglishVoice(){
+  const ranked=[/google.*(us|english)/i,/microsoft.*(aria|jenny|guy|zira|david)/i,/samsung.*english/i,/(natural|neural|premium|enhanced)/i];
+  const american=englishVoices.filter(voice=>/^en[-_]US$/i.test(voice.lang));
+  const candidates=american.length?american:englishVoices;
+  for(const pattern of ranked){
+    const voice=candidates.find(item=>pattern.test(`${item.name} ${item.voiceURI}`));
+    if(voice)return voice;
+  }
+  return candidates.find(voice=>voice.default)||candidates[0]||null;
+}
+
+function englishTextFrom(element){
+  const copy=element.cloneNode(true);
+  copy.querySelectorAll('.he,.speak-button').forEach(item=>item.remove());
+  return copy.textContent.replace(/^[AB]:\s*/i,'').replace(/\s+/g,' ').trim();
+}
+
+function finishSpeechButton(){
+  if(!activeSpeechButton)return;
+  activeSpeechButton.classList.remove('is-speaking');
+  activeSpeechButton.setAttribute('aria-pressed','false');
+  activeSpeechButton=null;
+}
+
+function speakEnglish(text,button){
+  if(!speechEngine||!text)return;
+  speechEngine.cancel();
+  finishSpeechButton();
+  refreshEnglishVoices();
+  const utterance=new SpeechSynthesisUtterance(text);
+  utterance.lang='en-US';
+  utterance.rate=.82;
+  utterance.pitch=1;
+  const voice=preferredEnglishVoice();
+  if(voice)utterance.voice=voice;
+  utterance.onend=finishSpeechButton;
+  utterance.onerror=finishSpeechButton;
+  activeSpeechButton=button;
+  button.classList.add('is-speaking');
+  button.setAttribute('aria-pressed','true');
+  speechEngine.speak(utterance);
+}
+
+function addEnglishSpeechButtons(){
+  document.querySelectorAll('.en').forEach(element=>{
+    if(element.parentElement?.closest('.en')||element.querySelector(':scope > .speak-button'))return;
+    const text=englishTextFrom(element);
+    if(!text)return;
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='speak-button';
+    button.setAttribute('aria-label',`השמע באנגלית: ${text}`);
+    button.setAttribute('aria-pressed','false');
+    button.title='השמעת המשפט באנגלית';
+    button.innerHTML='<span aria-hidden="true">🔊</span>';
+    button.addEventListener('click',event=>{
+      event.preventDefault();
+      event.stopPropagation();
+      if(activeSpeechButton===button){speechEngine.cancel();finishSpeechButton();return;}
+      speakEnglish(text,button);
+    });
+    element.append(' ',button);
+  });
+}
+
+if(speechEngine){
+  refreshEnglishVoices();
+  speechEngine.addEventListener?.('voiceschanged',refreshEnglishVoices);
+  addEnglishSpeechButtons();
+}
