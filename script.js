@@ -132,3 +132,8 @@ if(speechEngine){
   speechEngine.addEventListener?.('voiceschanged',refreshEnglishVoices);
   addEnglishSpeechButtons();
 }
+
+// Make the story game discoverable from both parts of the book.
+addPageLink(sidebar,'game.html','🎮 משחק שיחות — היום הראשון בשכונה');
+const gameCover=document.querySelector('.cover');
+if(gameCover){const p=document.createElement('p');addPageLink(p,'game.html','🎮 צא להרפתקת שיחות באנגלית','part-button');gameCover.appendChild(p);}
