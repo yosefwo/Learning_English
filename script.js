@@ -136,4 +136,6 @@ if(speechEngine){
 // Make the story game discoverable from both parts of the book.
 addPageLink(sidebar,'game.html','🎮 משחק שיחות — סוד הגינה הנעולה');
 const gameCover=document.querySelector('.cover');
-if(gameCover){const p=document.createElement('p');addPageLink(p,'game.html','🎮 צא להרפתקת שיחות באנגלית','part-button');gameCover.appendChild(p);}
+if(gameCover&&!document.querySelector('.games-hub')){const p=document.createElement('p');addPageLink(p,'game.html','🎮 צא להרפתקת שיחות באנגלית','part-button');gameCover.appendChild(p);}
+
+addPageLink(sidebar,'city.html','🌃 האור האחרון — משימת מהירות בעיר');
