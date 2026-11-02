@@ -9,7 +9,7 @@ try {
  const saved=JSON.parse(localStorage.getItem(KEY));
  if(saved && saved.version===1 && Number.isInteger(saved.index) && saved.index>=0 && saved.index<=total && Number.isFinite(saved.score) && saved.score>=0 && saved.score<=total*10 && Number.isFinite(saved.best) && saved.best>=0 && saved.best<=total*10 && ['answers','attempts','assisted'].every(k=>Array.isArray(saved[k]))){state=saved;}
 } catch {storageOK=false;}
-let sound=false,locked=false,walking=false,walkTimer, options=[];
+let sound=true,locked=false,walking=false,walkTimer, options=[];
 function save(){state.best=Math.max(state.best,state.score);try{localStorage.setItem(KEY,JSON.stringify(state));storageOK=true;}catch{storageOK=false;}$('save-status').textContent=storageOK?'הניקוד וההתקדמות נשמרים אוטומטית בדפדפן במכשיר הזה.':'השמירה בדפדפן אינה זמינה כרגע. אפשר לשחק, אך ההתקדמות עלולה להימחק בסגירה.';}
 function position(index){let start=0;for(let i=0;i<GAME_STAGES.length;i++){const stage=GAME_STAGES[i];if(index<start+stage.turns.length)return {stage,stageIndex:i,turn:stage.turns[index-start],turnIndex:index-start,start};start+=stage.turns.length;}return null;}
 function speak(text){if(!sound||!window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;const voice=window.speechSynthesis.getVoices().find(v=>/^en-US$/i.test(v.lang));if(voice)u.voice=voice;window.speechSynthesis.speak(u);}
@@ -26,18 +26,23 @@ function render(animate=false){
  $('place').textContent=stage.place;$('level').textContent=`${stageIndex<5?'צעדים ראשונים':stageIndex<10?'בונים ביטחון':'משלבים זמנים'} · ${stage.topic} · שיחה ${turnIndex+1}/${stage.turns.length}`;
  $('story').textContent=stage.story;$('npc').textContent=stage.avatar;$('name').textContent=stage.name;$('speech').textContent=turn.speech;$('mission').textContent=turn.mission;
  $('lesson').href=`${stage.chapter<9?'index.html':'part2.html'}#ch${stage.chapter}`;
- $('reply').hidden=true;$('help').hidden=true;$('feedback').hidden=true;$('feedback').className='';$('next').hidden=!locked;
+ $('result').hidden=true;$('reply').hidden=true;$('help').hidden=true;$('feedback').hidden=true;$('feedback').className='';$('next').hidden=!locked;
  $('hint').disabled=locked;$('translate').disabled=locked;
  options=shuffled([turn.answer,...turn.wrong]);$('answers').replaceChildren();
- options.forEach(text=>{const b=document.createElement('button');b.textContent=text;b.lang='en';b.dir='ltr';b.disabled=locked||walking;
+ options.forEach(text=>{const b=document.createElement('button');b.dataset.answer=text;const english=document.createElement('span');english.textContent=text;english.lang='en';english.dir='ltr';b.append(english);b.dir='ltr';b.disabled=locked||walking;
  if(state.attempts[state.index]?.includes(text)){b.classList.add('wrong');b.disabled=true;}
  b.addEventListener('click',()=>answer(text,b,turn));$('answers').append(b);});
- if(locked){showCorrect(turn);}
+ if(locked){showCorrect(turn);}else if(state.attempts[state.index]?.length){showTranslations(turn);}
  $('scene').classList.toggle('walking',animate);
- if(animate){clearTimeout(walkTimer);walkTimer=setTimeout(()=>{$('scene').classList.remove('walking');walking=false;[...$('answers').children].forEach(b=>b.disabled=locked||state.attempts[state.index]?.includes(b.textContent));speak(turn.speech);},900);}else speak(turn.speech);
+ if(animate){clearTimeout(walkTimer);walkTimer=setTimeout(()=>{$('scene').classList.remove('walking');walking=false;[...$('answers').children].forEach(b=>b.disabled=locked||state.attempts[state.index]?.includes(b.dataset.answer));},900);}
+ // Speak within the user's click, including at a new station; delayed speech can be blocked on mobile.
+ speak(turn.speech);
 }
-function showCorrect(turn){$('reply').textContent=turn.answer;$('reply').hidden=false;[...$('answers').children].forEach(b=>{b.disabled=true;if(b.textContent===turn.answer)b.classList.add('correct');});$('feedback').hidden=false;$('feedback').className='';$('feedback').textContent=`נכון! +${state.answers[state.index]} נקודות. ${turn.rule}`;}
-function answer(text,b,turn){if(locked||walking)return;if(text!==turn.answer){state.attempts[state.index]??=[];state.attempts[state.index].push(text);b.classList.add('wrong');b.disabled=true;$('feedback').hidden=false;$('feedback').className='error';$('feedback').textContent=`עוד ניסיון — ${turn.rule}`;save();return;}
+function showTranslations(turn){
+ [...$('answers').children].forEach(b=>{if(b.querySelector('.answer-translation'))return;const text=b.dataset.answer;const index=turn.wrong.indexOf(text);const translation=document.createElement('span');translation.className='answer-translation';translation.lang='he';translation.dir='rtl';translation.textContent=index<0?turn.answerTranslation:turn.wrongTranslations[index];b.append(translation);});
+}
+function showCorrect(turn){showTranslations(turn);$('reply').textContent=turn.answer;$('reply').hidden=false;[...$('answers').children].forEach(b=>{b.disabled=true;if(b.dataset.answer===turn.answer)b.classList.add('correct');});$('feedback').hidden=false;$('feedback').className='';$('feedback').textContent=`נכון! +${state.answers[state.index]} נקודות. ${turn.rule}`;$('result').textContent=turn.outcome;$('result').hidden=false;}
+function answer(text,b,turn){if(locked||walking)return;showTranslations(turn);if(text!==turn.answer){state.attempts[state.index]??=[];state.attempts[state.index].push(text);b.classList.add('wrong');b.disabled=true;$('feedback').hidden=false;$('feedback').className='error';$('feedback').textContent=`עוד ניסיון — ${turn.rule}`;save();return;}
  locked=true;const points=state.attempts[state.index]?.length?4:state.assisted[state.index]?7:10;state.answers[state.index]=points;state.score+=points;save();showCorrect(turn);$('score').textContent=state.score;$('best').textContent=state.best;$('next').hidden=false;$('hint').disabled=true;$('translate').disabled=true;speak(turn.answer);
 }
 function assist(kind){if(locked)return;const {turn}=position(state.index);state.assisted[state.index]=true;save();$('help').hidden=false;$('help').textContent=kind==='hint'?turn.rule:turn.translation;}
@@ -47,5 +52,6 @@ function restart(){if(state.index<total&&!confirm('להתחיל מסע חדש? �
 $('restart').addEventListener('click',restart);$('replay').addEventListener('click',restart);
 if(!window.speechSynthesis){$('sound').disabled=true;$('sound').textContent='הקראה אינה זמינה בדפדפן';}
 $('sound').addEventListener('click',()=>{sound=!sound;$('sound').setAttribute('aria-pressed',String(sound));$('sound').textContent=sound?'🔇 כבה הקראה':'🔊 השמע שיחה';if(sound&&position(state.index))speak(position(state.index).turn.speech);else window.speechSynthesis?.cancel();});
+$('sound').setAttribute('aria-pressed',String(sound));if(window.speechSynthesis)$('sound').textContent='🔇 כבה הקראה';
 window.addEventListener('pagehide',()=>window.speechSynthesis?.cancel());save();render(true);
 })();
