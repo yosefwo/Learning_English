@@ -1,14 +1,16 @@
 'use strict';
 const VillagePhysics = (()=>{
- // A falling object's lower edge must cross the visible rim from above.
- // Interpolate the contact point so fast frames cannot skip the narrow rim.
- function crossesBasketRim(previous,current,rim){
+ // Detect the instant the falling object's bottom edge reaches the basket's top.
+ // Using the previous and current rectangles prevents fast frames skipping contact.
+ function crossesBasketRim(previous,current,basket){
+  if(!previous||!current||!basket)return false;
   const travel=current.bottom-previous.bottom;
-  if(travel<=0||previous.bottom>rim.top||current.bottom<rim.top)return false;
-  const t=(rim.top-previous.bottom)/travel;
+  if(travel<=0||previous.bottom>basket.top||current.bottom<basket.top)return false;
+  const t=(basket.top-previous.bottom)/travel;
   const left=previous.left+(current.left-previous.left)*t;
   const right=previous.right+(current.right-previous.right)*t;
-  return Math.min(right,rim.right)>Math.max(left,rim.left);
+  // The bottom horizontal edge must overlap the top horizontal edge of the basket.
+  return left<=basket.right&&right>=basket.left;
  }
  return {crossesBasketRim};
 })();
